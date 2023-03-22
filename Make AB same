@@ -1,0 +1,26 @@
+//You are given two binary arrays 
+
+//�A and �B, each of size �N (�≥3)(N≥3).
+
+//You can perform the following operation on array �A:
+
+//Select three indexes �,�,i,j, and �k (1≤�<�<�≤�)(1≤i<j<k≤N),
+//and set ��=��Aj=Ai ∣∣ ��Aj ∣∣ ��Ak. Here ∣∣ denotes the bitwise OR operation.
+//Determine whether it is possible to convert the array �A to array �B by applying any (possibly zero) number of given operations.
+
+//Note that, in a binary array each element is either 00 or 11.
+
+
+
+# cook your dish here
+for _ in range(int(input())):
+    n = int(input())
+    a = list(map(int, input().split()))
+    b = list(map(int, input().split()))
+    ans = 'Yes'
+    ones = a.count(1)
+    for i in range(n):
+        if a[i] > b[i]: ans = 'No'
+        elif a[i] < b[i] and ones == 0: ans = 'No'
+    if a[0] != b[0] or a[-1] != b[-1]: ans = 'No'
+    print(ans)   
